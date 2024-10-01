@@ -215,3 +215,9 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+
+
+// SELECT c.id, name, image_url, email, SUM (i.amount) AS total_invoices, 
+// SUM (CASE WHEN i.status ='pending' THEN i.amount ELSE 0 END) AS total_pending,
+// SUM (CASE WHEN i.status ='paid' THEN i.amount ELSE 0 END) AS total_paid
+// from customers c INNER JOIN invoices i ON c.id = i.customer_id GROUP BY c.id ;
