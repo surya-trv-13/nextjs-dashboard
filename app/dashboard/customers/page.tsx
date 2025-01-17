@@ -2,6 +2,12 @@ import { fetchFilteredCustomers } from "@/app/lib/data";
 import {FormattedCustomersTable } from "@/app/lib/definitions";
 import CustomersTable from "@/app/ui/customers/table";
 
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Customer',
+};
+
 export default async function Page({
   searchParams,
 }: {
